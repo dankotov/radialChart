@@ -6,43 +6,68 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="graphDiv">
+    <div id="graph" class="graphDiv">
         <?xml version="1.0" encoding="utf-8"?>
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        <svg id="viewGraph" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             viewBox="0 0 2000 2000" style="enable-background:new 0 0 2000 2000;" xml:space="preserve">
-            <g id="levels">
-                <g id="aggravation">
-                    <circle class="st1" cx="1000" cy="1000" r="540"/>
-                </g>
-                <circle id="lie" class="st2" cx="1000" cy="1000" r="260"/>
-            </g>
             <g id="mainCircles">
-                <circle id="middleBig" class="st5" cx="1000" cy="1000" r="676"/>
-                <circle id="middleSmall" class="st5" cx="1000" cy="1000" r="505"/>
-                <circle id="inner" class="st5" cx="1000" cy="1000" r="298"/>
+                <circle id="outer" class="st5" cx="1000" cy="1000" r="802"/>
+                <circle id="middle" class="st5" cx="1000" cy="1000" r="608"/>
+                <circle id="inner" class="st5" cx="1000" cy="1000" r="338"/>
+            </g>
+
+            <!--<g id="segments">
+                <path class="segment first" d="M1600.33,399.67L1000,1000V151C1234.44,151,1446.7,246.03,1600.33,399.67z"/>
+                <path class="segment second" d="M1849,1000h-849l600.33-600.33C1753.97,553.3,1849,765.56,1849,1000z"/>
+                <path class="segment third" d="M1849,1000c0,234.44-95.03,446.7-248.67,600.33L1000,1000H1849z"/>
+                <path class="segment fourth" d="M1600.33,1600.33C1446.7,1753.97,1234.44,1849,1000,1849v-849L1600.33,1600.33z"/>
+                <path class="segment fifth" d="M1000,1000v849c-234.44,0-446.7-95.03-600.33-248.67L1000,1000z"/>
+                <path class="segment sixth" d="M1000,1000l-600.33,600.33C246.03,1446.7,151,1234.44,151,1000H1000z"/>
+                <path class="segment seventh" d="M1000,1000H151c0-234.44,95.03-446.7,248.67-600.33L1000,1000z"/>
+                <path class="segment eighth" d="M1000,151v849L399.67,399.67C553.3,246.03,765.56,151,1000,151z"/>
+            </g>-->
+            <g id="linesInOne">
+                <radialGradient id="SVGID_1_" cx="1000" cy="1000" r="880" gradientUnits="userSpaceOnUse">
+                    <stop  offset="0" style="stop-color:#C4C4C4;stop-opacity:0"/>
+                    <stop  offset="0.18" style="stop-color:#C4C4C4;stop-opacity:0.02"/>
+                    <stop  offset="0.28" style="stop-color:#C4C4C4;stop-opacity:0.3"/>
+                    <stop  offset="0.4194" style="stop-color:#C4C4C4"/>
+                    <stop  offset="0.6645" style="stop-color:#9F9F9F"/>
+                    <stop  offset="0.8724" style="stop-color:#878787"/>
+                    <stop  offset="1" style="stop-color:#7E7E7E"/>
+                </radialGradient>
+                <polygon class="linesUnited" points="1880,995.5 1010.86,995.5 1625.44,380.93 1619.07,374.56 1004.5,989.14 1004.5,120 995.5,120 
+                    995.5,989.14 380.93,374.56 374.56,380.93 989.14,995.5 120,995.5 120,1004.5 989.14,1004.5 374.56,1619.07 380.93,1625.44 
+                    995.5,1010.86 995.5,1880 1004.5,1880 1004.5,1010.86 1619.07,1625.44 1625.44,1619.07 1010.86,1004.5 1880,1004.5 		"/>
             </g>
             <g id="segments">
-                <path id="ninth" class="segment" d="M1000,151v849L399.67,399.67C553.3,246.03,765.56,151,1000,151z"/>
-                <path id="tenth" class="segment" d="M1000,1000H151c0-234.44,95.03-446.7,248.67-600.33L1000,1000z"/>
-                <path id="seventh" class="segment" d="M1000,1000l-600.33,600.33C246.03,1446.7,151,1234.44,151,1000H1000z"/>
-                <path id="sixth" class="segment" d="M1000,1000v849c-234.44,0-446.7-95.03-600.33-248.67L1000,1000z"/>
-                <path id="fifth" class="segment" d="M1600.33,1600.33C1446.7,1753.97,1234.44,1849,1000,1849v-849L1600.33,1600.33z"/>
-                <path id="third" class="segment" d="M1849,1000c0,234.44-95.03,446.7-248.67,600.33L1000,1000H1849z"/>
-                <path id="second" class="segment" d="M1849,1000h-849l600.33-600.33C1753.97,553.3,1849,765.56,1849,1000z"/>
-                <path id="first" class="segment" d="M1600.33,399.67L1000,1000V151C1234.44,151,1446.7,246.03,1600.33,399.67z"/>
+                <path class="segment first" d="M1563.91,429.72L1004.5,989.14V198.02C1222.56,199.21,1420.02,287.44,1563.91,429.72z"/>
+                <path class="segment second" d="M1801.98,995.5h-791.12l559.42-559.41C1712.56,579.98,1800.79,777.44,1801.98,995.5z"/>
+                <path class="segment third" d="M1801.98,1004.5c-1.19,218.06-89.42,415.52-231.7,559.41l-559.42-559.41H1801.98z"/>
+                <path class="segment fourth" d="M1563.91,1570.28c-143.89,142.28-341.35,230.51-559.41,231.7v-791.12L1563.91,1570.28z"/>
+                <path class="segment fifth" d="M995.5,1010.86v791.12c-218.06-1.19-415.52-89.42-559.41-231.7L995.5,1010.86z"/>
+                <path class="segment sixth" d="M989.14,1004.5l-559.42,559.41c-142.28-143.89-230.51-341.35-231.7-559.41H989.14z"/>
+                <path class="segment seventh" d="M989.14,995.5H198.02c1.19-218.06,89.42-415.52,231.7-559.41L989.14,995.5z"/>
+                <path class="segment eighth" d="M995.5,198.02v791.12L436.09,429.72C579.98,287.44,777.44,199.21,995.5,198.02z"/>
             </g>
-            <g id="lines">
-                <line id="_x32_" class="line" x1="1000" y1="1000" x2="1599.63" y2="400.37"/>
-                <line id="_x31_" class="line" x1="1000" y1="1000" x2="1000" y2="152"/>
-                <line id="_x33_" class="line" x1="1000" y1="1000" x2="1848" y2="1000"/>
-                <line id="_x34_" class="line" x1="1000" y1="1000" x2="1599.63" y2="1599.63"/>
-                <line id="_x35_" class="line" x1="1000" y1="1000" x2="1000" y2="1848"/>
-                <line id="_x36_" class="line" x1="1000" y1="1000" x2="400.37" y2="1599.63"/>
-                <line id="_x37_" class="line" x1="1000" y1="1000" x2="152" y2="1000"/>
-                <line id="_x38_" class="line" x1="1000" y1="1000" x2="400.37" y2="400.37"/> 
+            <g id="levels">
+                <circle class="agro" cx="1000" cy="1000" r="0"/>
+                <circle class="lie" cx="1000" cy="1000" r="0"/>
             </g>
-            <circle id="outer" class="st4" cx="1000" cy="1000" r="849"/>
+            <g id="linesSelected">
+                <line class="selLine" x1="999.5" y1="999.5" x2="999.5" y2="119.5"/>
+                <line class="selLine" x1="999.5" y1="999.5" x2="1621.75" y2="377.25"/>
+                <line class="selLine" x1="999.5" y1="999.5" x2="1879.5" y2="999.5"/>
+                <line class="selLine" x1="999.5" y1="999.5" x2="1621.75" y2="1621.75"/>
+                <line class="selLine" x1="999.5" y1="999.5" x2="999.5" y2="1879.5"/>
+                <line class="selLine" x1="999.5" y1="999.5" x2="377.25" y2="1621.75"/>
+                <line class="selLine" x1="999.5" y1="999.5" x2="119.5" y2="999.5"/>
+                <line class="selLine" x1="999.5" y1="999.5" x2="377.25" y2="377.25"/>
+            </g>
+            <!--<polygon points="1000, 1534.6599999999999 1378.0617116291996, 1378.0617116291996 1623.77, 1000 1378.0617116291996, 621.9382883708005 1000, 465.34000000000003 621.9382883708005, 87.27828837080051 554.45, 1000 239.39857364233376, 1315.0514263576663" fill="#C4C4C4" fill-opacity="0.5" stroke="#000" stroke-width="15"></polygon>-->
+            <polygon id="polyStats"></polygon>
         </svg>
     </div>
+    <script src="graphScript.js"></script>
 </body>
 </html>
