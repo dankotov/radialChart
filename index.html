@@ -11,21 +11,19 @@
         <svg id="viewGraph" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             viewBox="0 0 2000 2000" style="enable-background:new 0 0 2000 2000;" xml:space="preserve">
             <g id="mainCircles">
-                <circle id="outer" class="st5" cx="1000" cy="1000" r="802"/>
-                <circle id="middle" class="st5" cx="1000" cy="1000" r="608"/>
-                <circle id="inner" class="st5" cx="1000" cy="1000" r="338"/>
+                <radialGradient id="outerFillGrad" cx="1000" cy="1000" r="802" gradientUnits="userSpaceOnUse">
+                    <stop  offset="0" style="stop-color:#EA3323;stop-opacity:0"/>
+                    <stop  offset="0.3222" style="stop-color:#EA3323;stop-opacity:0.4573"/>
+                    <stop  offset="0.3333" style="stop-color:#EA3323;stop-opacity:0.5"/>
+                    <stop  offset="0.3444" style="stop-color:#4791EA;stop-opacity:0.5"/>
+                    <stop  offset="0.6655" style="stop-color:#4791EA;stop-opacity:0"/>
+                    <stop  offset="0.6666" style="stop-color:#EA3323;stop-opacity:0.5"/>
+                    <stop  offset="1" style="stop-color:#EA3323;stop-opacity:0"/>
+                </radialGradient>
+                <circle id="outer" class="st5 outerGrad" fill-opacity="0" cx="1000" cy="1000" r="802"/>
+                <circle id="middle" class="st5" cx="1000" cy="1000" r="534.66"/>
+                <circle id="inner" class="st5" cx="1000" cy="1000" r="267.33"/>
             </g>
-
-            <!--<g id="segments">
-                <path class="segment first" d="M1600.33,399.67L1000,1000V151C1234.44,151,1446.7,246.03,1600.33,399.67z"/>
-                <path class="segment second" d="M1849,1000h-849l600.33-600.33C1753.97,553.3,1849,765.56,1849,1000z"/>
-                <path class="segment third" d="M1849,1000c0,234.44-95.03,446.7-248.67,600.33L1000,1000H1849z"/>
-                <path class="segment fourth" d="M1600.33,1600.33C1446.7,1753.97,1234.44,1849,1000,1849v-849L1600.33,1600.33z"/>
-                <path class="segment fifth" d="M1000,1000v849c-234.44,0-446.7-95.03-600.33-248.67L1000,1000z"/>
-                <path class="segment sixth" d="M1000,1000l-600.33,600.33C246.03,1446.7,151,1234.44,151,1000H1000z"/>
-                <path class="segment seventh" d="M1000,1000H151c0-234.44,95.03-446.7,248.67-600.33L1000,1000z"/>
-                <path class="segment eighth" d="M1000,151v849L399.67,399.67C553.3,246.03,765.56,151,1000,151z"/>
-            </g>-->
             <g id="linesInOne">
                 <radialGradient id="SVGID_1_" cx="1000" cy="1000" r="880" gradientUnits="userSpaceOnUse">
                     <stop  offset="0" style="stop-color:#C4C4C4;stop-opacity:0"/>
@@ -55,19 +53,75 @@
                 <circle class="lie" cx="1000" cy="1000" r="0"/>
             </g>
             <g id="linesSelected">
-                <line class="selLine" x1="999.5" y1="999.5" x2="999.5" y2="119.5"/>
-                <line class="selLine" x1="999.5" y1="999.5" x2="1621.75" y2="377.25"/>
-                <line class="selLine" x1="999.5" y1="999.5" x2="1879.5" y2="999.5"/>
-                <line class="selLine" x1="999.5" y1="999.5" x2="1621.75" y2="1621.75"/>
-                <line class="selLine" x1="999.5" y1="999.5" x2="999.5" y2="1879.5"/>
-                <line class="selLine" x1="999.5" y1="999.5" x2="377.25" y2="1621.75"/>
-                <line class="selLine" x1="999.5" y1="999.5" x2="119.5" y2="999.5"/>
-                <line class="selLine" x1="999.5" y1="999.5" x2="377.25" y2="377.25"/>
+                <line id="lineFull" class="selLine fullest" x1="999.5" y1="999.5" x2="999.5" y2="999.5" stroke="#B4AFCB"stroke-width="0"/>
             </g>
-            <!--<polygon points="1000, 1534.6599999999999 1378.0617116291996, 1378.0617116291996 1623.77, 1000 1378.0617116291996, 621.9382883708005 1000, 465.34000000000003 621.9382883708005, 87.27828837080051 554.45, 1000 239.39857364233376, 1315.0514263576663" fill="#C4C4C4" fill-opacity="0.5" stroke="#000" stroke-width="15"></polygon>-->
-            <polygon id="polyStats"></polygon>
+            <polygon id="polyStats" class="polyMorph" points="1000, 1000 1000, 1000 1000, 1000 1000, 1000 1000, 1000 1000, 1000 1000, 1000 1000, 1000"></polygon>
+            <line id="linePoint"class="selLine" x1="999.5" y1="999.5" x2="999.5" y2="999.5" stroke="#371DF0"stroke-width="0"/>
+            <polygon id="1" points="1000, 1000 1000, 1000 1000, 1000"></polygon>
+            <polygon id="2" points="1000, 1000 1000, 1000 1000, 1000"></polygon>
+            <polygon id="3" points="1000, 1000 1000, 1000 1000, 1000"></polygon>
+            <polygon id="4" points="1000, 1000 1000, 1000 1000, 1000"></polygon>
+            <polygon id="5" points="1000, 1000 1000, 1000 1000, 1000"></polygon>
+            <polygon id="6" points="1000, 1000 1000, 1000 1000, 1000"></polygon>
+            <polygon id="7" points="1000, 1000 1000, 1000 1000, 1000"></polygon>
+            <polygon id="8" points="1000, 1000 1000, 1000 1000, 1000"></polygon>
+            <circle id="circle1" r="30" fill="none"></circle>
+            <circle id="circle2" r="30" fill="none"></circle>
+            <circle id="circle3" r="30" fill="none"></circle>
+            <circle id="circle4" r="30" fill="none"></circle>
+            <circle id="circle5" r="30" fill="none"></circle>
+            <circle id="circle6" r="30" fill="none"></circle>
+            <circle id="circle7" r="30" fill="none"></circle>
+            <circle id="circle8" r="30" fill="none"></circle>
         </svg>
     </div>
+    <div class="fields">
+        <div class="traits">
+            <p>TRAITS</p>
+            <label for="lie">lie</label>
+            <input type="number" value="2" id="lie" placeholder="lie">
+            <label for="agro">agro</label>
+            <input type="number" value="6" id="agro" placeholder="agro">
+            <label for="extravert">extravert</label>
+            <input type="number" value="2" id="extravert" placeholder="extra">
+            <label for="spont">spont</label>
+            <input type="number" value="6" id="spont" placeholder="spont">
+            <label for="aggres">aggres</label>
+            <input type="number" value="7" id="aggres" placeholder="aggres">
+            <label for="rigid">rigid</label>
+            <input type="number" value="6" id="rigid" placeholder="rigid">
+            <label for="introvers">introvers</label>
+            <input type="number" value="6" id="introvers" placeholder="introvers">
+            <label for="senzitiv">senzitiv</label>
+            <input type="number" value="5" id="senzitiv" placeholder="senzitiv">
+            <label for="trevozhn">trevozhn</label>
+            <input type="number" value="7" id="trevozhn" placeholder="trevozhn">
+            <label for="labil">labil</label>
+            <input type="number" value="5" id="labil" placeholder="labil">
+            <button id="btn1">submit</button>
+        </div>
+        <div class="effects">
+            <p>EFFECTS</p>
+            <label for="highlight">highlight (1 at a time)</label>
+            <div class="soloEffect">
+                <input type="text" id="highlight" placeholder="lie, agro, etc">
+                <button id="btnHighlight">highlight</button>
+                <button id="deBtnHighlight">dehighlight</button>
+            </div>
+            <label for="highlightSectorNums">highlightSector</label>
+            <div class="soloEffect">
+                <input type="text" id="highlightSectorNums" placeholder="1, 2, 3, etc">
+                <input type="text" id="highlightSectorColor" placeholder="#9B51E0 etc">
+                <button id="btnSector">highlightSector</button>
+                <button id="deBtnSector">dehighlightSector</button>
+            </div>
+            <label for="btnIssues">highlightIssues</label>
+            <button id="btnIssues">highlightIssues</button>
+            <button id="deBtnIssues">dehighlightIssues</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
     <script src="graphScript.js"></script>
 </body>
 </html>

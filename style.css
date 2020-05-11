@@ -1,3 +1,47 @@
+body {
+    display: flex;
+}
+.fields {
+    width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+}
+.traits {
+    width: 100px;
+}
+.traits label {
+    display: flex;
+    flex-direction: row;
+}
+.traits input {
+    width: 80px;
+}
+
+.effects {
+    width: 200px;
+}
+.effects div {
+    margin-bottom: 20px;
+}
+.effects input {
+    width: 80px;
+}
+#btnHighlight {
+    width: 100px;
+}
+.soloEffect {
+    display: flex;
+    flex-direction: row;
+}
+.soloEffect input {
+    width: 100px;
+}
+#btnSector {
+    display: block;
+    width: 200px;
+    margin-bottom: 5px;
+}
 .graphDiv {
     width: 700px;
     margin:auto;
@@ -10,11 +54,13 @@
 .st4{fill:none;stroke:#2B2A29;stroke-width:9;stroke-miterlimit:22.9256;}
 .st5{fill:none;stroke:#C4C4C4;stroke-width:6;stroke-miterlimit:22.9256;}
 .linesUnited{fill:url(#SVGID_1_);}
-.selLine{fill:none;stroke:#B4AFCB;stroke-width:0;stroke-linecap:round;stroke-miterlimit:22.9256;}
+.selLine{fill:none;stroke-linecap:round;/*stroke-miterlimit:22.9256;*/}
+.outerGrad{fill:url(#outerFillGrad);}
 
 .segment {
     fill:none;
 }
+
 /*
             <style type="text/css">
                 .st0{display:none;}
