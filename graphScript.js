@@ -394,7 +394,8 @@ class Graph {
 
 
 someData = {"lie":2,"agro":6,"extravert":2,"spont":6,"aggres":5,"rigid":6,"introvers":5,"senzitiv":4,"trevozhn":7,"labil":2};
-graph = new Graph("graph", someData);
+
+setTimeout(function() {graph = new Graph("graph", someData);},500);
 
 document.querySelectorAll(".inputData").forEach((inputField) => {
     inputField.addEventListener("input", function() {
