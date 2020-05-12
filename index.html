@@ -6,311 +6,167 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="graph" class="graphDiv" style="opacity: 0;">
-        <?xml version="1.0" encoding="utf-8"?>
-        <svg id="viewGraph" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-            viewBox="0 0 2000 2000" style="enable-background:new 0 0 2000 2000;" xml:space="preserve">
-            <!--<g id="mainCircles">
-                <radialGradient id="outerFillGrad" cx="1000" cy="1000" r="802" gradientUnits="userSpaceOnUse">
-                    <stop  offset="0" style="stop-color:#EA3323;stop-opacity:0"/>
-                    <stop  offset="0.3222" style="stop-color:#EA3323;stop-opacity:0.4573"/>
-                    <stop  offset="0.3333" style="stop-color:#EA3323;stop-opacity:0.5"/>
-                    <stop  offset="0.3444" style="stop-color:#4791EA;stop-opacity:0.5"/>
-                    <stop  offset="0.6655" style="stop-color:#4791EA;stop-opacity:0"/>
-                    <stop  offset="0.6666" style="stop-color:#EA3323;stop-opacity:0.5"/>
-                    <stop  offset="1" style="stop-color:#EA3323;stop-opacity:0"/>
+    <div class="wholeContainer">
+        <div id="graph" class="graphDiv" style="opacity: 0;">
+            <?xml version="1.0" encoding="utf-8"?>
+            <svg id="viewGraph" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewBox="0 0 2000 2000" style="enable-background:new 0 0 2000 2000;" xml:space="preserve">
+                <!--<g id="mainCircles">
+                    <radialGradient id="outerFillGrad" cx="1000" cy="1000" r="802" gradientUnits="userSpaceOnUse">
+                        <stop  offset="0" style="stop-color:#EA3323;stop-opacity:0"/>
+                        <stop  offset="0.3222" style="stop-color:#EA3323;stop-opacity:0.4573"/>
+                        <stop  offset="0.3333" style="stop-color:#EA3323;stop-opacity:0.5"/>
+                        <stop  offset="0.3444" style="stop-color:#4791EA;stop-opacity:0.5"/>
+                        <stop  offset="0.6655" style="stop-color:#4791EA;stop-opacity:0"/>
+                        <stop  offset="0.6666" style="stop-color:#EA3323;stop-opacity:0.5"/>
+                        <stop  offset="1" style="stop-color:#EA3323;stop-opacity:0"/>
+                    </radialGradient>
+                    <circle id="outer" class="st5 outerGrad" fill-opacity="0" cx="1000" cy="1000" r="802"/>
+                    <circle id="middle" class="st5" cx="1000" cy="1000" r="534.66"/>
+                    <circle id="inner" class="st5" cx="1000" cy="1000" r="267.33"/>
+                </g>-->
+                <g id="mainCircles">
+                    <circle id="middleBig" class="st5" cx="1000" cy="1000" r="676"/>
+                    <circle id="middleSmall" class="st5" cx="1000" cy="1000" r="505"/>
+                    <circle id="inner" class="st5" cx="1000" cy="1000" r="298"/>
+                </g>
+                <!--
+                <g id="linesInOne">
+                    <radialGradient id="SVGID_1_" cx="1000" cy="1000" r="880" gradientUnits="userSpaceOnUse">
+                        <stop  offset="0" style="stop-color:#C4C4C4;stop-opacity:0"/>
+                        <stop  offset="0.18" style="stop-color:#C4C4C4;stop-opacity:0.02"/>
+                        <stop  offset="0.28" style="stop-color:#C4C4C4;stop-opacity:0.3"/>
+                        <stop  offset="0.4194" style="stop-color:#C4C4C4"/>
+                        <stop  offset="0.6645" style="stop-color:#9F9F9F"/>
+                        <stop  offset="0.8724" style="stop-color:#878787"/>
+                        <stop  offset="1" style="stop-color:#7E7E7E"/>
+                    </radialGradient>
+                    <polygon class="linesUnited" points="1880,995.5 1010.86,995.5 1625.44,380.93 1619.07,374.56 1004.5,989.14 1004.5,120 995.5,120 
+                        995.5,989.14 380.93,374.56 374.56,380.93 989.14,995.5 120,995.5 120,1004.5 989.14,1004.5 374.56,1619.07 380.93,1625.44 
+                        995.5,1010.86 995.5,1880 1004.5,1880 1004.5,1010.86 1619.07,1625.44 1625.44,1619.07 1010.86,1004.5 1880,1004.5 		"/>
+                </g>-->
+                <g id="segments">
+                    <path class="segment first" d="M1599.83,399.17l-599.48,599.48L1000,999V151C1234.19,151,1446.24,245.82,1599.83,399.17z"/>
+                    <path class="segment second" d="M1849,999h-849l0.35-0.35l599.48-599.48C1753.55,552.63,1848.73,764.7,1849,999z"/>
+                    <path class="segment third" d="M1849,999v1c0,234.19-94.82,446.24-248.17,599.83l-600.48-600.48L1000,999H1849z"/>
+                    <path class="segment fourth" d="M1600.83,1599.83C1447.15,1753.77,1234.7,1849,1000,1849V999l0.35,0.35L1600.83,1599.83z"/>
+                    <path class="segment fifth" d="M1000,999v850c-234.7,0-447.15-95.23-600.83-249.17l600.48-600.48L1000,999z"/>
+                    <path class="segment sixth" d="M1000,999l-0.35,0.35l-600.48,600.48C245.82,1446.24,151,1234.19,151,1000v-1H1000z"/>
+                    <path class="segment seventh" d="M1000,999H151c0.27-234.3,95.45-446.37,249.17-599.83l599.48,599.48L1000,999z"/>
+                    <path class="segment eighth" d="M1000,151v848l-0.35-0.35L400.17,399.17C553.76,245.82,765.81,151,1000,151z"/>
+                </g>
+                <g id="linesCont">
+                    <line class="lines" x1="1000" y1="1000" x2="400.37" y2="400.37"/>
+                    <line class="lines" x1="1000" y1="1000" x2="152" y2="1000"/>
+                    <line class="lines" x1="1000" y1="1000" x2="400.37" y2="1599.63"/>
+                    <line class="lines" x1="1000" y1="1000" x2="1000" y2="1848"/>
+                    <line class="lines" x1="1000" y1="1000" x2="1599.63" y2="1599.63"/>
+                    <line class="lines" x1="1000" y1="1000" x2="1848" y2="1000"/>
+                    <line class="lines" x1="1000" y1="1000" x2="1599.63" y2="400.37"/>
+                    <line class="lines" x1="1000" y1="1000" x2="1000" y2="152"/>
+                </g>
+                <!--
+                <g id="segments">
+                    <path class="segment first" d="M1563.91,429.72L1004.5,989.14V198.02C1222.56,199.21,1420.02,287.44,1563.91,429.72z"/>
+                    <path class="segment second" d="M1801.98,995.5h-791.12l559.42-559.41C1712.56,579.98,1800.79,777.44,1801.98,995.5z"/>
+                    <path class="segment third" d="M1801.98,1004.5c-1.19,218.06-89.42,415.52-231.7,559.41l-559.42-559.41H1801.98z"/>
+                    <path class="segment fourth" d="M1563.91,1570.28c-143.89,142.28-341.35,230.51-559.41,231.7v-791.12L1563.91,1570.28z"/>
+                    <path class="segment fifth" d="M995.5,1010.86v791.12c-218.06-1.19-415.52-89.42-559.41-231.7L995.5,1010.86z"/>
+                    <path class="segment sixth" d="M989.14,1004.5l-559.42,559.41c-142.28-143.89-230.51-341.35-231.7-559.41H989.14z"/>
+                    <path class="segment seventh" d="M989.14,995.5H198.02c1.19-218.06,89.42-415.52,231.7-559.41L989.14,995.5z"/>
+                    <path class="segment eighth" d="M995.5,198.02v791.12L436.09,429.72C579.98,287.44,777.44,199.21,995.5,198.02z"/>
+                </g>-->
+                <g id="levels">
+                    <circle class="agro" cx="1000" cy="1000" r="0"/>
+                    <circle class="lie" cx="1000" cy="1000" r="0"/>
+                </g>
+                <g id="linesSelected">
+                    <line id="lineFull" class="selLine fullest" x1="999.5" y1="999.5" x2="999.5" y2="999.5" stroke="#B4AFCB"stroke-width="0"/>
+                </g>
+                <circle id="outer" class="outline" cx="1000" cy="1000" r="849"/>
+
+                <polygon id="polyStatsGrad" class="polyMorph" points="1000, 1000 1000, 1000 1000, 1000 1000, 1000 1000, 1000 1000, 1000 1000, 1000 1000, 1000"></polygon>
+
+                <polygon id="1bg" points="1000, 1000 1000, 1000 1000, 1000"></polygon>
+                <polygon id="2bg" points="1000, 1000 1000, 1000 1000, 1000"></polygon>
+                <polygon id="3bg" points="1000, 1000 1000, 1000 1000, 1000"></polygon>
+                <polygon id="4bg" points="1000, 1000 1000, 1000 1000, 1000"></polygon>
+                <polygon id="5bg" points="1000, 1000 1000, 1000 1000, 1000"></polygon>
+                <polygon id="6bg" points="1000, 1000 1000, 1000 1000, 1000"></polygon>
+                <polygon id="7bg" points="1000, 1000 1000, 1000 1000, 1000"></polygon>
+                <polygon id="8bg" points="1000, 1000 1000, 1000 1000, 1000"></polygon>
+                <polygon id="1" points="1000, 1000 1000, 1000 1000, 1000"></polygon>
+                <polygon id="2" points="1000, 1000 1000, 1000 1000, 1000"></polygon>
+                <polygon id="3" points="1000, 1000 1000, 1000 1000, 1000"></polygon>
+                <polygon id="4" points="1000, 1000 1000, 1000 1000, 1000"></polygon>
+                <polygon id="5" points="1000, 1000 1000, 1000 1000, 1000"></polygon>
+                <polygon id="6" points="1000, 1000 1000, 1000 1000, 1000"></polygon>
+                <polygon id="7" points="1000, 1000 1000, 1000 1000, 1000"></polygon>
+                <polygon id="8" points="1000, 1000 1000, 1000 1000, 1000"></polygon>
+
+                
+                <polygon id="polyStats" class="polyMorph" points="1000, 1000 1000, 1000 1000, 1000 1000, 1000 1000, 1000 1000, 1000 1000, 1000 1000, 1000" fill="none"></polygon>
+                <radialGradient id="polyGrad" cx="1000" cy="1000" r="849" gradientUnits="userSpaceOnUse">
+                    <stop  offset="0" style="stop-color:#576B88;stop-opacity:0"/>
+                    <stop  offset="1" style="stop-color:#576B88"/>
                 </radialGradient>
-                <circle id="outer" class="st5 outerGrad" fill-opacity="0" cx="1000" cy="1000" r="802"/>
-                <circle id="middle" class="st5" cx="1000" cy="1000" r="534.66"/>
-                <circle id="inner" class="st5" cx="1000" cy="1000" r="267.33"/>
-            </g>-->
-            <g id="mainCircles">
-                <circle id="middleBig" class="st5" cx="1000" cy="1000" r="676"/>
-                <circle id="middleSmall" class="st5" cx="1000" cy="1000" r="505"/>
-                <circle id="inner" class="st5" cx="1000" cy="1000" r="298"/>
+
+                <line id="linePoint"class="selLine" x1="999.5" y1="999.5" x2="999.5" y2="999.5" stroke="#371DF0"stroke-width="0"/>
+
+                <circle id="circle1" r="30" fill="none"></circle>
+                <circle id="circle2" r="30" fill="none"></circle>
+                <circle id="circle3" r="30" fill="none"></circle>
+                <circle id="circle4" r="30" fill="none"></circle>
+                <circle id="circle5" r="30" fill="none"></circle>
+                <circle id="circle6" r="30" fill="none"></circle>
+                <circle id="circle7" r="30" fill="none"></circle>
+                <circle id="circle8" r="30" fill="none"></circle>
+
+                <g id="capsCont">
+                    <circle class="caps" cx="1000" cy="152" r="28"/>
+                    <circle class="caps" cx="1599.63" cy="400.37" r="28"/>
+                    <circle class="caps" cx="1848" cy="1000" r="28"/>
+                    <circle class="caps" cx="1599.63" cy="1599.63" r="28"/>
+                    <circle class="caps" cx="1000" cy="1848" r="28"/>
+                    <circle class="caps" cx="400.37" cy="1599.63" r="28"/>
+                    <circle class="caps" cx="152" cy="1000" r="28"/>
+                    <circle class="caps" cx="400.37" cy="400.37" r="28"/>
+                </g>
+
+                <g id="graphLabels">
+                    <path d="M1023.04,95.84l-8.89-22.71h-28.61l-8.79,22.71h-8.4l28.22-71.68h6.98l28.08,71.68H1023.04z M1011.56,65.66l-8.3-22.12
+                        c-1.07-2.8-2.18-6.23-3.32-10.3c-0.72,3.12-1.74,6.56-3.08,10.3l-8.4,22.12H1011.56z"/>
+                    <path d="M1019.9,1975.69H980.1v-71.39h39.79v7.37H988.4v23h29.59v7.32H988.4v26.27h31.49V1975.69z"/>
+                    <path d="M1947.28,970.73c-7.85,0-14.04,2.61-18.58,7.84s-6.81,12.38-6.81,21.46c0,9.34,2.19,16.56,6.57,21.66
+                        c4.38,5.09,10.62,7.64,18.73,7.64c4.98,0,10.66-0.9,17.04-2.69v7.28c-4.95,1.86-11.05,2.78-18.31,2.78
+                        c-10.51,0-18.63-3.19-24.34-9.57c-5.71-6.38-8.57-15.45-8.57-27.2c0-7.36,1.38-13.8,4.13-19.34c2.75-5.53,6.72-9.8,11.91-12.79
+                        c5.19-2.99,11.3-4.49,18.33-4.49c7.49,0,14.03,1.37,19.63,4.1l-3.52,7.13C1958.08,972,1952.68,970.73,1947.28,970.73z"/>
+                    <path d="M45.42,998.32h24.27v34.72c-3.78,1.2-7.62,2.12-11.52,2.73s-8.43,0.93-13.57,0.93c-10.81,0-19.22-3.21-25.24-9.64
+                        c-6.02-6.43-9.03-15.44-9.03-27.03c0-7.42,1.49-13.92,4.47-19.51c2.98-5.58,7.27-9.85,12.87-12.79
+                        c5.6-2.95,12.16-4.42,19.68-4.42c7.62,0,14.71,1.4,21.29,4.2l-3.22,7.32c-6.45-2.73-12.65-4.1-18.6-4.1
+                        c-8.69,0-15.48,2.59-20.36,7.76s-7.32,12.35-7.32,21.53c0,9.64,2.35,16.94,7.06,21.92c4.7,4.98,11.61,7.47,20.73,7.47
+                        c4.95,0,9.78-0.57,14.5-1.71v-21.97H45.42V998.32z"/>
+                    <path d="M1675.27,287.31h20.17c9.47,0,16.32,1.42,20.56,4.25c4.23,2.83,6.35,7.31,6.35,13.43c0,4.23-1.18,7.72-3.54,10.47
+                        c-2.36,2.75-5.8,4.53-10.33,5.35v0.49c10.84,1.86,16.26,7.55,16.26,17.09c0,6.38-2.16,11.36-6.47,14.94
+                        c-4.31,3.58-10.34,5.37-18.09,5.37h-24.9V287.31z M1683.57,317.87h13.67c5.86,0,10.07-0.92,12.65-2.76
+                        c2.57-1.84,3.86-4.94,3.86-9.3c0-4-1.43-6.89-4.3-8.67c-2.87-1.77-7.42-2.66-13.67-2.66h-12.21V317.87z M1683.57,324.9v26.71
+                        h14.89c5.76,0,10.1-1.11,13.01-3.34c2.91-2.23,4.37-5.72,4.37-10.47c0-4.43-1.49-7.68-4.47-9.77c-2.98-2.08-7.51-3.12-13.6-3.12
+                        H1683.57z"/>
+                    <path d="M1728.49,1676.32c0,11.78-3.2,20.79-9.59,27.03c-6.4,6.23-15.6,9.35-27.61,9.35h-19.78v-71.39h21.88
+                        c11.1,0,19.73,3.08,25.88,9.23S1728.49,1665.28,1728.49,1676.32z M1719.7,1676.61c0-9.31-2.34-16.32-7.01-21.04
+                        c-4.67-4.72-11.61-7.08-20.83-7.08h-12.06v57.03h10.11c9.9,0,17.33-2.43,22.31-7.3
+                        C1717.21,1693.35,1719.7,1686.15,1719.7,1676.61z"/>
+                    <path d="M311.4,1712.69h-8.3v-71.39h39.79v7.37H311.4v26.12h29.59v7.37H311.4V1712.69z"/>
+                    <path d="M350.1,358.69h-8.3V325.1h-37.6v33.59h-8.3v-71.39h8.3v30.37h37.6v-30.37h8.3V358.69z"/>
             </g>
-            <!--
-            <g id="linesInOne">
-                <radialGradient id="SVGID_1_" cx="1000" cy="1000" r="880" gradientUnits="userSpaceOnUse">
-                    <stop  offset="0" style="stop-color:#C4C4C4;stop-opacity:0"/>
-                    <stop  offset="0.18" style="stop-color:#C4C4C4;stop-opacity:0.02"/>
-                    <stop  offset="0.28" style="stop-color:#C4C4C4;stop-opacity:0.3"/>
-                    <stop  offset="0.4194" style="stop-color:#C4C4C4"/>
-                    <stop  offset="0.6645" style="stop-color:#9F9F9F"/>
-                    <stop  offset="0.8724" style="stop-color:#878787"/>
-                    <stop  offset="1" style="stop-color:#7E7E7E"/>
-                </radialGradient>
-                <polygon class="linesUnited" points="1880,995.5 1010.86,995.5 1625.44,380.93 1619.07,374.56 1004.5,989.14 1004.5,120 995.5,120 
-                    995.5,989.14 380.93,374.56 374.56,380.93 989.14,995.5 120,995.5 120,1004.5 989.14,1004.5 374.56,1619.07 380.93,1625.44 
-                    995.5,1010.86 995.5,1880 1004.5,1880 1004.5,1010.86 1619.07,1625.44 1625.44,1619.07 1010.86,1004.5 1880,1004.5 		"/>
-            </g>-->
-            <g id="segments">
-                <path class="segment first" d="M1599.83,399.17l-599.48,599.48L1000,999V151C1234.19,151,1446.24,245.82,1599.83,399.17z"/>
-                <path class="segment second" d="M1849,999h-849l0.35-0.35l599.48-599.48C1753.55,552.63,1848.73,764.7,1849,999z"/>
-                <path class="segment third" d="M1849,999v1c0,234.19-94.82,446.24-248.17,599.83l-600.48-600.48L1000,999H1849z"/>
-                <path class="segment fourth" d="M1600.83,1599.83C1447.15,1753.77,1234.7,1849,1000,1849V999l0.35,0.35L1600.83,1599.83z"/>
-                <path class="segment fifth" d="M1000,999v850c-234.7,0-447.15-95.23-600.83-249.17l600.48-600.48L1000,999z"/>
-                <path class="segment sixth" d="M1000,999l-0.35,0.35l-600.48,600.48C245.82,1446.24,151,1234.19,151,1000v-1H1000z"/>
-                <path class="segment seventh" d="M1000,999H151c0.27-234.3,95.45-446.37,249.17-599.83l599.48,599.48L1000,999z"/>
-                <path class="segment eighth" d="M1000,151v848l-0.35-0.35L400.17,399.17C553.76,245.82,765.81,151,1000,151z"/>
-            </g>
-            <g id="linesCont">
-                <line class="lines" x1="1000" y1="1000" x2="400.37" y2="400.37"/>
-                <line class="lines" x1="1000" y1="1000" x2="152" y2="1000"/>
-                <line class="lines" x1="1000" y1="1000" x2="400.37" y2="1599.63"/>
-                <line class="lines" x1="1000" y1="1000" x2="1000" y2="1848"/>
-                <line class="lines" x1="1000" y1="1000" x2="1599.63" y2="1599.63"/>
-                <line class="lines" x1="1000" y1="1000" x2="1848" y2="1000"/>
-                <line class="lines" x1="1000" y1="1000" x2="1599.63" y2="400.37"/>
-                <line class="lines" x1="1000" y1="1000" x2="1000" y2="152"/>
-            </g>
-            <!--
-            <g id="segments">
-                <path class="segment first" d="M1563.91,429.72L1004.5,989.14V198.02C1222.56,199.21,1420.02,287.44,1563.91,429.72z"/>
-                <path class="segment second" d="M1801.98,995.5h-791.12l559.42-559.41C1712.56,579.98,1800.79,777.44,1801.98,995.5z"/>
-                <path class="segment third" d="M1801.98,1004.5c-1.19,218.06-89.42,415.52-231.7,559.41l-559.42-559.41H1801.98z"/>
-                <path class="segment fourth" d="M1563.91,1570.28c-143.89,142.28-341.35,230.51-559.41,231.7v-791.12L1563.91,1570.28z"/>
-                <path class="segment fifth" d="M995.5,1010.86v791.12c-218.06-1.19-415.52-89.42-559.41-231.7L995.5,1010.86z"/>
-                <path class="segment sixth" d="M989.14,1004.5l-559.42,559.41c-142.28-143.89-230.51-341.35-231.7-559.41H989.14z"/>
-                <path class="segment seventh" d="M989.14,995.5H198.02c1.19-218.06,89.42-415.52,231.7-559.41L989.14,995.5z"/>
-                <path class="segment eighth" d="M995.5,198.02v791.12L436.09,429.72C579.98,287.44,777.44,199.21,995.5,198.02z"/>
-            </g>-->
-            <g id="levels">
-                <circle class="agro" cx="1000" cy="1000" r="0"/>
-                <circle class="lie" cx="1000" cy="1000" r="0"/>
-            </g>
-            <g id="linesSelected">
-                <line id="lineFull" class="selLine fullest" x1="999.5" y1="999.5" x2="999.5" y2="999.5" stroke="#B4AFCB"stroke-width="0"/>
-            </g>
-            <circle id="outer" class="outline" cx="1000" cy="1000" r="849"/>
-
-            <polygon id="polyStatsGrad" class="polyMorph" points="1000, 1000 1000, 1000 1000, 1000 1000, 1000 1000, 1000 1000, 1000 1000, 1000 1000, 1000"></polygon>
-
-            <polygon id="1bg" points="1000, 1000 1000, 1000 1000, 1000"></polygon>
-            <polygon id="2bg" points="1000, 1000 1000, 1000 1000, 1000"></polygon>
-            <polygon id="3bg" points="1000, 1000 1000, 1000 1000, 1000"></polygon>
-            <polygon id="4bg" points="1000, 1000 1000, 1000 1000, 1000"></polygon>
-            <polygon id="5bg" points="1000, 1000 1000, 1000 1000, 1000"></polygon>
-            <polygon id="6bg" points="1000, 1000 1000, 1000 1000, 1000"></polygon>
-            <polygon id="7bg" points="1000, 1000 1000, 1000 1000, 1000"></polygon>
-            <polygon id="8bg" points="1000, 1000 1000, 1000 1000, 1000"></polygon>
-            <polygon id="1" points="1000, 1000 1000, 1000 1000, 1000"></polygon>
-            <polygon id="2" points="1000, 1000 1000, 1000 1000, 1000"></polygon>
-            <polygon id="3" points="1000, 1000 1000, 1000 1000, 1000"></polygon>
-            <polygon id="4" points="1000, 1000 1000, 1000 1000, 1000"></polygon>
-            <polygon id="5" points="1000, 1000 1000, 1000 1000, 1000"></polygon>
-            <polygon id="6" points="1000, 1000 1000, 1000 1000, 1000"></polygon>
-            <polygon id="7" points="1000, 1000 1000, 1000 1000, 1000"></polygon>
-            <polygon id="8" points="1000, 1000 1000, 1000 1000, 1000"></polygon>
-
-            
-            <polygon id="polyStats" class="polyMorph" points="1000, 1000 1000, 1000 1000, 1000 1000, 1000 1000, 1000 1000, 1000 1000, 1000 1000, 1000" fill="none"></polygon>
-            <radialGradient id="polyGrad" cx="1000" cy="1000" r="849" gradientUnits="userSpaceOnUse">
-                <stop  offset="0" style="stop-color:#576B88;stop-opacity:0"/>
-                <stop  offset="1" style="stop-color:#576B88"/>
-            </radialGradient>
-
-            <line id="linePoint"class="selLine" x1="999.5" y1="999.5" x2="999.5" y2="999.5" stroke="#371DF0"stroke-width="0"/>
-
-            <circle id="circle1" r="30" fill="none"></circle>
-            <circle id="circle2" r="30" fill="none"></circle>
-            <circle id="circle3" r="30" fill="none"></circle>
-            <circle id="circle4" r="30" fill="none"></circle>
-            <circle id="circle5" r="30" fill="none"></circle>
-            <circle id="circle6" r="30" fill="none"></circle>
-            <circle id="circle7" r="30" fill="none"></circle>
-            <circle id="circle8" r="30" fill="none"></circle>
-
-            <g id="capsCont">
-                <circle class="caps" cx="1000" cy="152" r="28"/>
-                <circle class="caps" cx="1599.63" cy="400.37" r="28"/>
-                <circle class="caps" cx="1848" cy="1000" r="28"/>
-                <circle class="caps" cx="1599.63" cy="1599.63" r="28"/>
-                <circle class="caps" cx="1000" cy="1848" r="28"/>
-                <circle class="caps" cx="400.37" cy="1599.63" r="28"/>
-                <circle class="caps" cx="152" cy="1000" r="28"/>
-                <circle class="caps" cx="400.37" cy="400.37" r="28"/>
-            </g>
-
-            <g id="graphLabels">
-                <path d="M1023.04,95.84l-8.89-22.71h-28.61l-8.79,22.71h-8.4l28.22-71.68h6.98l28.08,71.68H1023.04z M1011.56,65.66l-8.3-22.12
-                    c-1.07-2.8-2.18-6.23-3.32-10.3c-0.72,3.12-1.74,6.56-3.08,10.3l-8.4,22.12H1011.56z"/>
-                <path d="M1019.9,1975.69H980.1v-71.39h39.79v7.37H988.4v23h29.59v7.32H988.4v26.27h31.49V1975.69z"/>
-                <path d="M1947.28,970.73c-7.85,0-14.04,2.61-18.58,7.84s-6.81,12.38-6.81,21.46c0,9.34,2.19,16.56,6.57,21.66
-                    c4.38,5.09,10.62,7.64,18.73,7.64c4.98,0,10.66-0.9,17.04-2.69v7.28c-4.95,1.86-11.05,2.78-18.31,2.78
-                    c-10.51,0-18.63-3.19-24.34-9.57c-5.71-6.38-8.57-15.45-8.57-27.2c0-7.36,1.38-13.8,4.13-19.34c2.75-5.53,6.72-9.8,11.91-12.79
-                    c5.19-2.99,11.3-4.49,18.33-4.49c7.49,0,14.03,1.37,19.63,4.1l-3.52,7.13C1958.08,972,1952.68,970.73,1947.28,970.73z"/>
-                <path d="M45.42,998.32h24.27v34.72c-3.78,1.2-7.62,2.12-11.52,2.73s-8.43,0.93-13.57,0.93c-10.81,0-19.22-3.21-25.24-9.64
-                    c-6.02-6.43-9.03-15.44-9.03-27.03c0-7.42,1.49-13.92,4.47-19.51c2.98-5.58,7.27-9.85,12.87-12.79
-                    c5.6-2.95,12.16-4.42,19.68-4.42c7.62,0,14.71,1.4,21.29,4.2l-3.22,7.32c-6.45-2.73-12.65-4.1-18.6-4.1
-                    c-8.69,0-15.48,2.59-20.36,7.76s-7.32,12.35-7.32,21.53c0,9.64,2.35,16.94,7.06,21.92c4.7,4.98,11.61,7.47,20.73,7.47
-                    c4.95,0,9.78-0.57,14.5-1.71v-21.97H45.42V998.32z"/>
-                <path d="M1675.27,287.31h20.17c9.47,0,16.32,1.42,20.56,4.25c4.23,2.83,6.35,7.31,6.35,13.43c0,4.23-1.18,7.72-3.54,10.47
-                    c-2.36,2.75-5.8,4.53-10.33,5.35v0.49c10.84,1.86,16.26,7.55,16.26,17.09c0,6.38-2.16,11.36-6.47,14.94
-                    c-4.31,3.58-10.34,5.37-18.09,5.37h-24.9V287.31z M1683.57,317.87h13.67c5.86,0,10.07-0.92,12.65-2.76
-                    c2.57-1.84,3.86-4.94,3.86-9.3c0-4-1.43-6.89-4.3-8.67c-2.87-1.77-7.42-2.66-13.67-2.66h-12.21V317.87z M1683.57,324.9v26.71
-                    h14.89c5.76,0,10.1-1.11,13.01-3.34c2.91-2.23,4.37-5.72,4.37-10.47c0-4.43-1.49-7.68-4.47-9.77c-2.98-2.08-7.51-3.12-13.6-3.12
-                    H1683.57z"/>
-                <path d="M1728.49,1676.32c0,11.78-3.2,20.79-9.59,27.03c-6.4,6.23-15.6,9.35-27.61,9.35h-19.78v-71.39h21.88
-                    c11.1,0,19.73,3.08,25.88,9.23S1728.49,1665.28,1728.49,1676.32z M1719.7,1676.61c0-9.31-2.34-16.32-7.01-21.04
-                    c-4.67-4.72-11.61-7.08-20.83-7.08h-12.06v57.03h10.11c9.9,0,17.33-2.43,22.31-7.3
-                    C1717.21,1693.35,1719.7,1686.15,1719.7,1676.61z"/>
-                <path d="M311.4,1712.69h-8.3v-71.39h39.79v7.37H311.4v26.12h29.59v7.37H311.4V1712.69z"/>
-                <path d="M350.1,358.69h-8.3V325.1h-37.6v33.59h-8.3v-71.39h8.3v30.37h37.6v-30.37h8.3V358.69z"/>
-        </g>
-        </svg>
-    </div>
-    <div class="fields">
-        <div id="traitsHolder" class="traits" style="opacity: 0">
-            
-            <div class="sliderContainer">
-                <label for="extravert">A</label>
-                <input type="range" min="1" max="9" value="2" id="extravert" class="inputData slider">
-                <div class="sliderSections">
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock lastBlock">&#9679;</div>		
-                </div>
-                <div id="extravertGradId" class="sliderGrad" style="width:0px"></div>
-                <p id="extravertVindicator" class="valueIndicator">2</p>
-            </div>
-            
-            <div class="sliderContainer">
-                <label for="spont">B</label>
-                <input type="range" min="1" max="9" value="6" id="spont" class="inputData slider">
-                <div class="sliderSections">
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock lastBlock">&#9679;</div>		
-                </div>
-                <div id="spontGradId" class="sliderGrad" style="width: 0px"></div>
-                <p id="spontVindicator" class="valueIndicator">6</p>
-            </div>
-            
-            <div class="sliderContainer">
-                <label for="aggres">C</label>
-                <input type="range" min="1" max="9" value="5" id="aggres" class="inputData slider">
-                <div class="sliderSections">
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock lastBlock">&#9679;</div>		
-                </div>
-                <div id="aggresGradId" class="sliderGrad" style="width: 0px"></div>
-                <p id="aggresVindicator" class="valueIndicator">5</p>
-            </div>
-            
-            <div class="sliderContainer">
-                <label for="rigid">D</label>
-                <input type="range" min="1" max="9" value="6" id="rigid" class="inputData slider">
-                <div class="sliderSections">
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock lastBlock">&#9679;</div>		
-                </div>
-                <div id="rigidGradId" class="sliderGrad" style="width: 0px"></div>
-                <p id="rigidVindicator" class="valueIndicator">6</p>
-            </div>
-            
-            <div class="sliderContainer">
-                <label for="introvers">E</label>
-                <input type="range" min="1" max="9" value="5" id="introvers" class="inputData slider">
-                <div class="sliderSections">
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock lastBlock">&#9679;</div>		
-                </div>
-                <div id="introversGradId" class="sliderGrad" style="width: 0px"></div>
-                <p id="introversVindicator" class="valueIndicator">5</p>
-            </div>
-            
-            <div class="sliderContainer">
-                <label for="senzitiv">F</label>
-                <input type="range" min="1" max="9" value="4" id="senzitiv" class="inputData slider">
-                <div class="sliderSections">
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock lastBlock">&#9679;</div>		
-                </div>
-                <div id="senzitivGradId" class="sliderGrad" style="width: 0px"></div>
-                <p id="senzitivVindicator" class="valueIndicator">4</p>
-            </div>
-            
-            <div class="sliderContainer">
-                <label for="trevozhn">G</label>
-                <input type="range" min="1" max="9" value="7" id="trevozhn" class="inputData slider">
-                <div class="sliderSections">
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock lastBlock">&#9679;</div>		
-                </div>
-                <div id="trevozhnGradId" class="sliderGrad" style="width: 0px"></div>
-                <p id="trevozhnVindicator" class="valueIndicator">7</p>
-            </div>
-           
-            <div class="sliderContainer">
-                <label for="labil">H</label>
-                <input type="range" min="1" max="9" value="2" id="labil" class="inputData slider">
-                <div class="sliderSections">
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock">&#9679;</div>
-                    <div class="sliderBlock lastBlock">&#9679;</div>		
-                </div>
-                <div id="labilGradId" class="sliderGrad" style="width:0px"></div>
-                <p id="labilVindicator" class="valueIndicator">2</p>
-            </div>
-
-            <div class="separatedTraits">
+            </svg>
+        </div>
+        <div class="fields">
+            <div id="traitsHolder" class="traits" style="opacity: 0">
+                
                 <div class="sliderContainer">
-                    <label for="lie">R1</label>
-                    <input type="range" min="1" max="9" value="2" id="lie" class="inputData slider">
+                    <label for="extravert">A</label>
+                    <input type="range" min="1" max="9" value="2" id="extravert" class="inputData slider">
                     <div class="sliderSections">
                         <div class="sliderBlock">&#9679;</div>
                         <div class="sliderBlock">&#9679;</div>
@@ -322,13 +178,13 @@
                         <div class="sliderBlock">&#9679;</div>
                         <div class="sliderBlock lastBlock">&#9679;</div>		
                     </div>
-                    <div id="lieGradId" class="sliderGrad" style="width:0px"></div>
-                    <p id="lieVindicator" class="valueIndicator">2</p>
+                    <div id="extravertGradId" class="sliderGrad" style="width:0px"></div>
+                    <p id="extravertVindicator" class="valueIndicator">2</p>
                 </div>
                 
                 <div class="sliderContainer">
-                    <label for="agro">R2</label>
-                    <input type="range" min="1" max="9" value="6" id="agro" class="inputData slider">
+                    <label for="spont">B</label>
+                    <input type="range" min="1" max="9" value="6" id="spont" class="inputData slider">
                     <div class="sliderSections">
                         <div class="sliderBlock">&#9679;</div>
                         <div class="sliderBlock">&#9679;</div>
@@ -340,14 +196,156 @@
                         <div class="sliderBlock">&#9679;</div>
                         <div class="sliderBlock lastBlock">&#9679;</div>		
                     </div>
-                    <div id="agroGradId" class="sliderGrad" style="width:0px"></div>
-                    <p id="agroVindicator" class="valueIndicator">6</p>
+                    <div id="spontGradId" class="sliderGrad" style="width: 0px"></div>
+                    <p id="spontVindicator" class="valueIndicator">6</p>
+                </div>
+                
+                <div class="sliderContainer">
+                    <label for="aggres">C</label>
+                    <input type="range" min="1" max="9" value="5" id="aggres" class="inputData slider">
+                    <div class="sliderSections">
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock lastBlock">&#9679;</div>		
+                    </div>
+                    <div id="aggresGradId" class="sliderGrad" style="width: 0px"></div>
+                    <p id="aggresVindicator" class="valueIndicator">5</p>
+                </div>
+                
+                <div class="sliderContainer">
+                    <label for="rigid">D</label>
+                    <input type="range" min="1" max="9" value="6" id="rigid" class="inputData slider">
+                    <div class="sliderSections">
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock lastBlock">&#9679;</div>		
+                    </div>
+                    <div id="rigidGradId" class="sliderGrad" style="width: 0px"></div>
+                    <p id="rigidVindicator" class="valueIndicator">6</p>
+                </div>
+                
+                <div class="sliderContainer">
+                    <label for="introvers">E</label>
+                    <input type="range" min="1" max="9" value="5" id="introvers" class="inputData slider">
+                    <div class="sliderSections">
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock lastBlock">&#9679;</div>		
+                    </div>
+                    <div id="introversGradId" class="sliderGrad" style="width: 0px"></div>
+                    <p id="introversVindicator" class="valueIndicator">5</p>
+                </div>
+                
+                <div class="sliderContainer">
+                    <label for="senzitiv">F</label>
+                    <input type="range" min="1" max="9" value="4" id="senzitiv" class="inputData slider">
+                    <div class="sliderSections">
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock lastBlock">&#9679;</div>		
+                    </div>
+                    <div id="senzitivGradId" class="sliderGrad" style="width: 0px"></div>
+                    <p id="senzitivVindicator" class="valueIndicator">4</p>
+                </div>
+                
+                <div class="sliderContainer">
+                    <label for="trevozhn">G</label>
+                    <input type="range" min="1" max="9" value="7" id="trevozhn" class="inputData slider">
+                    <div class="sliderSections">
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock lastBlock">&#9679;</div>		
+                    </div>
+                    <div id="trevozhnGradId" class="sliderGrad" style="width: 0px"></div>
+                    <p id="trevozhnVindicator" class="valueIndicator">7</p>
+                </div>
+            
+                <div class="sliderContainer">
+                    <label for="labil">H</label>
+                    <input type="range" min="1" max="9" value="2" id="labil" class="inputData slider">
+                    <div class="sliderSections">
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock">&#9679;</div>
+                        <div class="sliderBlock lastBlock">&#9679;</div>		
+                    </div>
+                    <div id="labilGradId" class="sliderGrad" style="width:0px"></div>
+                    <p id="labilVindicator" class="valueIndicator">2</p>
+                </div>
+
+                <div class="separatedTraits">
+                    <div class="sliderContainer">
+                        <label for="lie">R1</label>
+                        <input type="range" min="1" max="9" value="2" id="lie" class="inputData slider">
+                        <div class="sliderSections">
+                            <div class="sliderBlock">&#9679;</div>
+                            <div class="sliderBlock">&#9679;</div>
+                            <div class="sliderBlock">&#9679;</div>
+                            <div class="sliderBlock">&#9679;</div>
+                            <div class="sliderBlock">&#9679;</div>
+                            <div class="sliderBlock">&#9679;</div>
+                            <div class="sliderBlock">&#9679;</div>
+                            <div class="sliderBlock">&#9679;</div>
+                            <div class="sliderBlock lastBlock">&#9679;</div>		
+                        </div>
+                        <div id="lieGradId" class="sliderGrad" style="width:0px"></div>
+                        <p id="lieVindicator" class="valueIndicator">2</p>
+                    </div>
+                    
+                    <div class="sliderContainer">
+                        <label for="agro">R2</label>
+                        <input type="range" min="1" max="9" value="6" id="agro" class="inputData slider">
+                        <div class="sliderSections">
+                            <div class="sliderBlock">&#9679;</div>
+                            <div class="sliderBlock">&#9679;</div>
+                            <div class="sliderBlock">&#9679;</div>
+                            <div class="sliderBlock">&#9679;</div>
+                            <div class="sliderBlock">&#9679;</div>
+                            <div class="sliderBlock">&#9679;</div>
+                            <div class="sliderBlock">&#9679;</div>
+                            <div class="sliderBlock">&#9679;</div>
+                            <div class="sliderBlock lastBlock">&#9679;</div>		
+                        </div>
+                        <div id="agroGradId" class="sliderGrad" style="width:0px"></div>
+                        <p id="agroVindicator" class="valueIndicator">6</p>
+                    </div>
                 </div>
             </div>
-            <!--<input type="range" min="1" max="8" value="2" id="lie" class="inputData">
-            <label for="agro">agro</label>
-            <input type="range" min="1" max="8" value="6" id="agro" class="inputData">
-            <label for="spont">spont</label>-->
         </div>
         <!--
         <div class="effects">

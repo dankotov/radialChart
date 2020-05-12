@@ -7,6 +7,15 @@
 	font-weight: 400;
 }
 
+.wholeContainer {
+	display: flex;
+	margin: 0 auto;
+	position: absolute;
+	
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
 .graphDiv {
 	transition: opacity 2s ease-in-out;
 }
@@ -58,10 +67,7 @@
     margin-bottom: 5px;
 }
 .graphDiv {
-	
-	
 	width: 700px;
-	height: 100%;
     margin:auto;
 }
 
