@@ -367,8 +367,8 @@ class Graph {
             });
             this.polySet = true;
         }
-
     }
+    
     refreshPolygon() {
         this.buildPoints();
         this.adjustLevels();
