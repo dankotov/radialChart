@@ -18,10 +18,12 @@
 }
 .graphDiv {
 	transition: opacity 2s ease-in-out;
+	width: 700px;
+    margin:auto;
 }
 
 .fields {
-    width: 500px;
+    width: 440px;
     margin: auto;
     display: flex;
     flex-direction: row;
@@ -66,12 +68,7 @@
     width: 200px;
     margin-bottom: 5px;
 }
-.graphDiv {
-	width: 700px;
-    margin:auto;
-}
 
-.st0{display:none;}
 .agro{fill:none;stroke:#9B51E0;stroke-miterlimit:22.9256;}
 .lie{fill:none;stroke:#F7685B;stroke-miterlimit:22.9256;}
 .line{fill:none;stroke:#C9C9C9;stroke-width:9;stroke-miterlimit:22.9256;}
@@ -213,6 +210,23 @@
 	margin-top: 25px;
 }
 
+
+@media only screen and (max-width: 1150px) {
+	.wholeContainer {
+		display: block;
+		position: relative;
+		transform: none;
+		top: 0;
+		left: 0;
+	}
+}
+
+@media only screen and (max-width: 750px) {
+	.graphDiv {
+		width: 450px;
+		margin: auto;
+	}
+}
 /*
             <style type="text/css">
                 .st0{display:none;}
