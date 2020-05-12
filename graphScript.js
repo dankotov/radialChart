@@ -6,6 +6,10 @@ class Graph {
         this.poly = document.getElementById("polyStats");
         this.points = "";
 
+        this.polySet = false;
+        this.lieSet = false;
+        this.agroSet = false;
+
         this.highlighted = false;
         this.highlightedTrait = "";
 
@@ -21,8 +25,16 @@ class Graph {
                                 ["999.5","1879.5"],["377.25","1621.75"],["119.5","999.5"],["377.25","377.25"]];
         this.pointLinesPoints = []; 
 
-        this.adjustLevels();
+        document.getElementById("graph").style.opacity = "1";
+        document.getElementById("traitsHolder").style.opacity = "1";
+        document.querySelectorAll(".inputData").forEach((inputField) => {
+            document.getElementById(inputField.id.concat("GradId")).style.width = (inputField.value * 40).toString().concat("px");
+            setTimeout(function(){
+                document.getElementById(inputField.id.concat("GradId")).style.transition = "width 0.1s ease";
+            }, 1000);
+        });
         this.buildPolygon();
+        setTimeout(this.adjustLevels.bind(this), 700);
     }
 
     highlightSector(sectors, color) {
@@ -97,13 +109,25 @@ class Graph {
 
         if (this.graphData.agro > 0 && this.graphData.agro <= 9) {
             var aggrLevel = (this.graphData.agro * 94.33).toString();
-            anime({
-                targets: '.agro',
-                r: aggrLevel,
-                easing: 'easeInOutQuint',
-                duration: 300,
-                loop: false
-              });
+            if (this.agroSet) {
+                anime({
+                    targets: '.agro',
+                    r: aggrLevel,
+                    easing: 'easeInOutQuint',
+                    duration: 200,
+                    loop: false
+                });
+            }
+            else {
+                anime({
+                    targets: '.agro',
+                    r: aggrLevel,
+                    easing: 'easeInOutCirc',
+                    duration: 1000,
+                    loop: false
+                });
+                this.agroSet = true;
+            }
 
             aggr[0].setAttribute("stroke-width","10");
 
@@ -119,13 +143,26 @@ class Graph {
 
         if (this.graphData.lie > 0 && this.graphData.lie <= 9) {
             var lieLevel = (this.graphData.lie * 94.33).toString();
-            anime({
-                targets: '.lie',
-                r: lieLevel,
-                easing: 'easeInOutQuint',
-                duration: 300,
-                loop: false
-              });
+            if (this.lieSet) {
+                anime({
+                    targets: '.lie',
+                    r: lieLevel,
+                    easing: 'easeInOutQuint',
+                    duration: 200,
+                    loop: false
+                });
+            }
+            else {
+                anime({
+                    targets: '.lie',
+                    r: lieLevel,
+                    easing: 'easeInOutCirc',
+                    duration: 1000,
+                    loop: false
+                });
+                this.lieSet = true;
+            }
+
 
             lie[0].setAttribute("stroke-width","10");
 
@@ -307,14 +344,28 @@ class Graph {
         document.getElementById("polyStatsGrad").setAttribute("fill-opacity","0.8");
         this.poly.setAttribute("stroke", "#576B88");
         this.poly.setAttribute("stroke-width", "10");
-        anime({
-            targets: ".polyMorph",
-            points: [
-                {value: this.points}
-            ],
-            easing: 'easeInOutQuint',
-            duration: 300,
-        });
+        if (this.polySet) {
+            anime({
+                targets: ".polyMorph",
+                points: [
+                    {value: this.points}
+                ],
+                easing: 'easeOutCubic',
+                duration: 200,
+            });
+        }
+        else {
+            anime({
+                targets: ".polyMorph",
+                points: [
+                    {value: this.points}
+                ],
+                easing: 'easeInOutCirc',
+                duration: 1500,
+            });
+            this.polySet = true;
+        }
+
     }
     refreshPolygon() {
         this.buildPoints();
@@ -336,15 +387,13 @@ class Graph {
                 {value: this.points}
             ],
             easing: 'easeInOutQuint',
-            duration: 300,
+            duration: 200,
         });
     }
 }
 
 
 someData = {"lie":2,"agro":6,"extravert":2,"spont":6,"aggres":5,"rigid":6,"introvers":5,"senzitiv":4,"trevozhn":7,"labil":2};
-cacheData = JSON.stringify(someData);
-
 graph = new Graph("graph", someData);
 
 document.querySelectorAll(".inputData").forEach((inputField) => {
@@ -352,6 +401,7 @@ document.querySelectorAll(".inputData").forEach((inputField) => {
         someData[inputField.id] = inputField.value;
         console.log(document.getElementById(inputField.id.concat("GradId")));
         document.getElementById(inputField.id.concat("GradId")).style.width = (inputField.value * 40).toString().concat("px");
+        document.getElementById(inputField.id.concat("Vindicator")).innerHTML = inputField.value;
         graph.refreshPolygon();
     })
 });

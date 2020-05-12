@@ -1,20 +1,34 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
+ body {
     display: flex;
-    background-color: #eeeeee;
+	background-color: #eeeeee;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
 }
+
+.graphDiv {
+	transition: opacity 2s ease-in-out;
+}
+
 .fields {
     width: 500px;
     margin: auto;
     display: flex;
     flex-direction: row;
 }
+
+.traits {
+	transition: opacity 1s ease-in-out;
+	width: 440px;
+}
 /*.traits {
     width: 100px;
 }*/
-.traits label {
+/*.traits label {
     display: flex;
-    flex-direction: row;
-}
+	flex-direction: row;
+}*/
 /*.traits input {
     width: 80px;
 }*/
@@ -44,7 +58,10 @@ body {
     margin-bottom: 5px;
 }
 .graphDiv {
-    width: 700px;
+	
+	
+	width: 700px;
+	height: 100%;
     margin:auto;
 }
 
@@ -66,17 +83,28 @@ body {
     fill:none;
 }
 
-
 .sliderContainer {
 	width: 360px;
 	height: 40px;
 	
 	margin: auto;
+	margin-bottom: 5px;
 
 	padding: 0;
 
 	position: relative;
 
+}
+.sliderContainer label {
+	position: absolute;
+	top: 0;
+	left: -40px;
+	width: 40px;
+	height: 40px;
+
+	line-height: 40px;
+	text-align: center;
+	font-size: 18px;
 }
 
 .sliderSections {
@@ -91,7 +119,7 @@ body {
 	-moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
 	width: 40px;
-	height: 100%;
+	height: 40px;
 	border-style: solid;
 	border-width: 1px 0px 1px 1px;
 	border-color: #D4D4D4;
@@ -100,6 +128,7 @@ body {
 	line-height: 40px;
 	font-size: 12px;
 	color: #D4D4D4;
+	vertical-align: middle;
 }
 .lastBlock {
 	border-width: 1px;
@@ -143,7 +172,39 @@ body {
 	background: linear-gradient(90deg, rgba(87,107,136,0) 0%, rgba(87,107,136,0.9009978991596639) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#576b88",endColorstr="#576b88",GradientType=1);
 
-	transition: width 0.1s ease;
+	transition: width 1s ease-in-out;
+}
+#lieGradId {
+	background: rgb(247,104,91);
+	background: -moz-linear-gradient(90deg, rgba(247,104,91,0) 0%, rgba(247,104,91,0.9) 100%);
+	background: -webkit-linear-gradient(90deg, rgba(247,104,91,0) 0%, rgba(247,104,91,0.9) 100%);
+	background: linear-gradient(90deg, rgba(247,104,91,0) 0%, rgba(247,104,91,0.9) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f7685b",endColorstr="#f7685b",GradientType=1);
+}
+#agroGradId {
+	background: rgb(155,81,224);
+	background: -moz-linear-gradient(90deg, rgba(155,81,224,0) 0%, rgba(155,81,224,0.9) 100%);
+	background: -webkit-linear-gradient(90deg, rgba(155,81,224,0) 0%, rgba(155,81,224,0.9) 100%);
+	background: linear-gradient(90deg, rgba(155,81,224,0) 0%, rgba(155,81,224,0.9) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9b51e0",endColorstr="#9b51e0",GradientType=1);
+}
+
+.valueIndicator {
+	position: absolute;
+	top: 0;
+	left: 380px;
+	margin: 0;
+	line-height: 40px;
+	
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+	text-align: center;
+	color: #37414F;
+	font-weight: 300;
+}
+
+.separatedTraits {
+	margin-top: 25px;
 }
 
 /*
