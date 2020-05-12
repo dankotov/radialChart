@@ -3,6 +3,7 @@
 <head>
 	<title>Graph</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,40 +12,13 @@
             <?xml version="1.0" encoding="utf-8"?>
             <svg id="viewGraph" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                 viewBox="0 0 2000 2000" style="enable-background:new 0 0 2000 2000;" xml:space="preserve">
-                <!--<g id="mainCircles">
-                    <radialGradient id="outerFillGrad" cx="1000" cy="1000" r="802" gradientUnits="userSpaceOnUse">
-                        <stop  offset="0" style="stop-color:#EA3323;stop-opacity:0"/>
-                        <stop  offset="0.3222" style="stop-color:#EA3323;stop-opacity:0.4573"/>
-                        <stop  offset="0.3333" style="stop-color:#EA3323;stop-opacity:0.5"/>
-                        <stop  offset="0.3444" style="stop-color:#4791EA;stop-opacity:0.5"/>
-                        <stop  offset="0.6655" style="stop-color:#4791EA;stop-opacity:0"/>
-                        <stop  offset="0.6666" style="stop-color:#EA3323;stop-opacity:0.5"/>
-                        <stop  offset="1" style="stop-color:#EA3323;stop-opacity:0"/>
-                    </radialGradient>
-                    <circle id="outer" class="st5 outerGrad" fill-opacity="0" cx="1000" cy="1000" r="802"/>
-                    <circle id="middle" class="st5" cx="1000" cy="1000" r="534.66"/>
-                    <circle id="inner" class="st5" cx="1000" cy="1000" r="267.33"/>
-                </g>-->
+
                 <g id="mainCircles">
                     <circle id="middleBig" class="st5" cx="1000" cy="1000" r="676"/>
                     <circle id="middleSmall" class="st5" cx="1000" cy="1000" r="505"/>
                     <circle id="inner" class="st5" cx="1000" cy="1000" r="298"/>
                 </g>
-                <!--
-                <g id="linesInOne">
-                    <radialGradient id="SVGID_1_" cx="1000" cy="1000" r="880" gradientUnits="userSpaceOnUse">
-                        <stop  offset="0" style="stop-color:#C4C4C4;stop-opacity:0"/>
-                        <stop  offset="0.18" style="stop-color:#C4C4C4;stop-opacity:0.02"/>
-                        <stop  offset="0.28" style="stop-color:#C4C4C4;stop-opacity:0.3"/>
-                        <stop  offset="0.4194" style="stop-color:#C4C4C4"/>
-                        <stop  offset="0.6645" style="stop-color:#9F9F9F"/>
-                        <stop  offset="0.8724" style="stop-color:#878787"/>
-                        <stop  offset="1" style="stop-color:#7E7E7E"/>
-                    </radialGradient>
-                    <polygon class="linesUnited" points="1880,995.5 1010.86,995.5 1625.44,380.93 1619.07,374.56 1004.5,989.14 1004.5,120 995.5,120 
-                        995.5,989.14 380.93,374.56 374.56,380.93 989.14,995.5 120,995.5 120,1004.5 989.14,1004.5 374.56,1619.07 380.93,1625.44 
-                        995.5,1010.86 995.5,1880 1004.5,1880 1004.5,1010.86 1619.07,1625.44 1625.44,1619.07 1010.86,1004.5 1880,1004.5 		"/>
-                </g>-->
+
                 <g id="segments">
                     <path class="segment first" d="M1599.83,399.17l-599.48,599.48L1000,999V151C1234.19,151,1446.24,245.82,1599.83,399.17z"/>
                     <path class="segment second" d="M1849,999h-849l0.35-0.35l599.48-599.48C1753.55,552.63,1848.73,764.7,1849,999z"/>
@@ -55,6 +29,7 @@
                     <path class="segment seventh" d="M1000,999H151c0.27-234.3,95.45-446.37,249.17-599.83l599.48,599.48L1000,999z"/>
                     <path class="segment eighth" d="M1000,151v848l-0.35-0.35L400.17,399.17C553.76,245.82,765.81,151,1000,151z"/>
                 </g>
+
                 <g id="linesCont">
                     <line class="lines" x1="1000" y1="1000" x2="400.37" y2="400.37"/>
                     <line class="lines" x1="1000" y1="1000" x2="152" y2="1000"/>
@@ -65,24 +40,16 @@
                     <line class="lines" x1="1000" y1="1000" x2="1599.63" y2="400.37"/>
                     <line class="lines" x1="1000" y1="1000" x2="1000" y2="152"/>
                 </g>
-                <!--
-                <g id="segments">
-                    <path class="segment first" d="M1563.91,429.72L1004.5,989.14V198.02C1222.56,199.21,1420.02,287.44,1563.91,429.72z"/>
-                    <path class="segment second" d="M1801.98,995.5h-791.12l559.42-559.41C1712.56,579.98,1800.79,777.44,1801.98,995.5z"/>
-                    <path class="segment third" d="M1801.98,1004.5c-1.19,218.06-89.42,415.52-231.7,559.41l-559.42-559.41H1801.98z"/>
-                    <path class="segment fourth" d="M1563.91,1570.28c-143.89,142.28-341.35,230.51-559.41,231.7v-791.12L1563.91,1570.28z"/>
-                    <path class="segment fifth" d="M995.5,1010.86v791.12c-218.06-1.19-415.52-89.42-559.41-231.7L995.5,1010.86z"/>
-                    <path class="segment sixth" d="M989.14,1004.5l-559.42,559.41c-142.28-143.89-230.51-341.35-231.7-559.41H989.14z"/>
-                    <path class="segment seventh" d="M989.14,995.5H198.02c1.19-218.06,89.42-415.52,231.7-559.41L989.14,995.5z"/>
-                    <path class="segment eighth" d="M995.5,198.02v791.12L436.09,429.72C579.98,287.44,777.44,199.21,995.5,198.02z"/>
-                </g>-->
+
                 <g id="levels">
                     <circle class="agro" cx="1000" cy="1000" r="0"/>
                     <circle class="lie" cx="1000" cy="1000" r="0"/>
                 </g>
+
                 <g id="linesSelected">
                     <line id="lineFull" class="selLine fullest" x1="999.5" y1="999.5" x2="999.5" y2="999.5" stroke="#B4AFCB"stroke-width="0"/>
                 </g>
+
                 <circle id="outer" class="outline" cx="1000" cy="1000" r="849"/>
 
                 <polygon id="polyStatsGrad" class="polyMorph" points="1000, 1000 1000, 1000 1000, 1000 1000, 1000 1000, 1000 1000, 1000 1000, 1000 1000, 1000"></polygon>
@@ -158,7 +125,7 @@
                         C1717.21,1693.35,1719.7,1686.15,1719.7,1676.61z"/>
                     <path d="M311.4,1712.69h-8.3v-71.39h39.79v7.37H311.4v26.12h29.59v7.37H311.4V1712.69z"/>
                     <path d="M350.1,358.69h-8.3V325.1h-37.6v33.59h-8.3v-71.39h8.3v30.37h37.6v-30.37h8.3V358.69z"/>
-            </g>
+                </g>
             </svg>
         </div>
         <div class="fields">

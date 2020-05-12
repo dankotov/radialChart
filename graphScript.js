@@ -28,7 +28,9 @@ class Graph {
         document.getElementById("graph").style.opacity = "1";
         document.getElementById("traitsHolder").style.opacity = "1";
         document.querySelectorAll(".inputData").forEach((inputField) => {
-            document.getElementById(inputField.id.concat("GradId")).style.width = (inputField.value * 40).toString().concat("px");
+            if (small.matches) {document.getElementById(inputField.id.concat("GradId")).style.width = (inputField.value * smallIncrement).toString().concat("px");}
+            else if (middle.matches) {document.getElementById(inputField.id.concat("GradId")).style.width = (inputField.value * middleIncrement).toString().concat("px");}
+            else {document.getElementById(inputField.id.concat("GradId")).style.width = (inputField.value * defaultIncrement).toString().concat("px");}
             setTimeout(function(){
                 document.getElementById(inputField.id.concat("GradId")).style.transition = "width 0.1s ease";
             }, 1000);
@@ -395,13 +397,33 @@ class Graph {
 
 someData = {"lie":2,"agro":6,"extravert":2,"spont":6,"aggres":5,"rigid":6,"introvers":5,"senzitiv":4,"trevozhn":7,"labil":2};
 
+const defaultIncrement = 40;
+const middleIncrement = 30;
+const smallIncrement = 27.27;
+
+var middle = window.matchMedia("(max-width: 470px)");
+var small = window.matchMedia("(max-width: 330px)");
+
 setTimeout(function() {graph = new Graph("graph", someData);},500);
+
+middle.addListener(adjustToScreen);
+small.addListener(adjustToScreen);
+
+function adjustToScreen() {
+    if (small.matches) {var increment = smallIncrement;}
+    else if (middle.matches) {var increment = middleIncrement;}
+    else {var increment = defaultIncrement;}
+    document.querySelectorAll(".inputData").forEach((inputField) => {
+        document.getElementById(inputField.id.concat("GradId")).style.width = (inputField.value * increment).toString().concat("px");
+    });
+}
 
 document.querySelectorAll(".inputData").forEach((inputField) => {
     inputField.addEventListener("input", function() {
         someData[inputField.id] = inputField.value;
-        console.log(document.getElementById(inputField.id.concat("GradId")));
-        document.getElementById(inputField.id.concat("GradId")).style.width = (inputField.value * 40).toString().concat("px");
+        if (small.matches) {document.getElementById(inputField.id.concat("GradId")).style.width = (inputField.value * smallIncrement).toString().concat("px");}
+        else if (middle.matches) {document.getElementById(inputField.id.concat("GradId")).style.width = (inputField.value * middleIncrement).toString().concat("px");}
+        else {document.getElementById(inputField.id.concat("GradId")).style.width = (inputField.value * defaultIncrement).toString().concat("px");}
         document.getElementById(inputField.id.concat("Vindicator")).innerHTML = inputField.value;
         graph.refreshPolygon();
     })

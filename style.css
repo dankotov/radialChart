@@ -1,10 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
 
- body {
+html,body {
+	overflow-x: hidden;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+} 
+body {
     display: flex;
 	background-color: #eeeeee;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
+}
+
+:root {
+	--slider-block-size: 40px;
+	--slider-blocks-width: calc(9 * var(--slider-block-size));
+	--slider-full-size: calc(11 * var(--slider-block-size)); 
+	--slider-marker-font-size: calc(0.45 * var(--slider-block-size));
+	--slider-line-height: calc(var(--slider-block-size)-2);
+	--slider-dot-size: calc(0.3 * var(--slider-block-size));
+	--slider-grad-height: calc(0.625 * var(--slider-block-size));
+	--slider-grad-margin: calc((var(--slider-block-size) - var(--slider-grad-height))/2);
+	--slider-value-offset: calc(var(--slider-blocks-width) + (var(--slider-block-size))/2);
 }
 
 .wholeContainer {
@@ -19,11 +37,11 @@
 .graphDiv {
 	transition: opacity 2s ease-in-out;
 	width: 700px;
-    margin:auto;
+    margin: auto;
 }
 
 .fields {
-    width: 440px;
+    width: var(--slider-full-size);
     margin: auto;
     display: flex;
     flex-direction: row;
@@ -31,7 +49,7 @@
 
 .traits {
 	transition: opacity 1s ease-in-out;
-	width: 440px;
+	width: var(--slider-full-size);
 }
 /*.traits {
     width: 100px;
@@ -87,8 +105,8 @@
 }
 
 .sliderContainer {
-	width: 360px;
-	height: 40px;
+	width: var(--slider-blocks-width);
+	height: var(--slider-block-size);
 	
 	margin: auto;
 	margin-bottom: 5px;
@@ -101,13 +119,13 @@
 .sliderContainer label {
 	position: absolute;
 	top: 0;
-	left: -40px;
-	width: 40px;
-	height: 40px;
+	left: calc(-1 * var(--slider-block-size));
+	width: var(--slider-block-size);
+	height: var(--slider-block-size);
 
-	line-height: 40px;
+	line-height: var(--slider-block-size);
 	text-align: center;
-	font-size: 18px;
+	font-size: var(--slider-marker-font-size);
 }
 
 .sliderSections {
@@ -121,15 +139,16 @@
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-	width: 40px;
-	height: 40px;
+	width: var(--slider-block-size);
+	height: var(--slider-block-size);
 	border-style: solid;
 	border-width: 1px 0px 1px 1px;
 	border-color: #D4D4D4;
 
 	text-align: center;
-	line-height: 38px;
-	font-size: 12px;
+	/*line-height: var(--slider-line-height);*/
+	line-height: 38px; /*REPLACE IN QUERIES*/
+	font-size: var(--slider-dot-size);
 	color: #D4D4D4;
 	vertical-align: middle;
 }
@@ -151,22 +170,22 @@
 	-webkit-appearance: none;
 	appearance: none;
 	cursor: pointer;
-	width: 40px;
-	height: 40px;
+	width: var(--slider-block-size);
+	height: var(--slider-block-size);
 }
 .slider::-moz-range-thumb {
 	cursor: pointer;
-	width: 40px;
-	height: 40px;
+	width: var(--slider-block-size);
+	height: var(--slider-block-size);
 }
 
 .sliderGrad {
 	position: absolute;
 	z-index: -1;
-	top: 7.5px;
+	top: var(--slider-grad-margin);
 	left: 0px;
 
-	height: 25px;
+	height: var(--slider-grad-height);
 	border-radius: 0px 25px 25px 0px;
 
 	background: rgb(87,107,136);
@@ -195,12 +214,12 @@
 .valueIndicator {
 	position: absolute;
 	top: 0;
-	left: 380px;
+	left: var(--slider-value-offset);
 	margin: 0;
-	line-height: 40px;
+	line-height: var(--slider-block-size);
 	
 	font-family: 'Open Sans', sans-serif;
-	font-size: 18px;
+	font-size: var(--slider-marker-font-size);
 	text-align: center;
 	color: #37414F;
 	font-weight: 300;
@@ -227,13 +246,36 @@
 		margin: auto;
 	}
 }
-/*
-            <style type="text/css">
-                .st0{display:none;}
-                .st1{fill:none;stroke:#9B51E0;stroke-width:6;stroke-miterlimit:22.9256;stroke-dasharray:80.7917,80.7917;}
-                .st2{fill:none;stroke:#F7685B;stroke-width:6;stroke-miterlimit:22.9256;stroke-dasharray:70,70;}
-                .st3{fill:none;stroke:#C9C9C9;stroke-width:9;stroke-miterlimit:22.9256;}
-                .st4{fill:none;stroke:#2B2A29;stroke-width:9;stroke-miterlimit:22.9256;}
-                .st5{fill:none;stroke:#C9C9C9;stroke-width:2;stroke-miterlimit:22.9256;}
-            </style>
-*/
+
+@media only screen and (max-width: 470px) {
+	.wholeContainer {
+		width: 320px;
+	}
+	.graphDiv {
+		width: 300px;
+		margin: auto;
+		margin-top: 10px;
+		margin-bottom: 15px;
+	}
+	.fields {
+		width: var(--slider-full-size);
+	}
+	:root {
+		--slider-block-size: 30px;
+	}
+	.sliderBlock {
+		line-height: 28px;
+	}
+}
+
+@media only screen and (max-width: 330px) {
+	.fields {
+		width: var(--slider-full-size);
+	}
+	:root {
+		--slider-block-size: 27.27px;
+	}
+	.sliderBlock {
+		line-height: 25.27px;
+	}
+}
