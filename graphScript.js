@@ -347,19 +347,16 @@ cacheData = JSON.stringify(someData);
 
 graph = new Graph("graph", someData);
 
-document.getElementById("btn1").addEventListener("click", refreshAUX);
+document.querySelectorAll(".inputData").forEach((inputField) => {
+    inputField.addEventListener("input", function() {
+        someData[inputField.id] = inputField.value;
+        console.log(document.getElementById(inputField.id.concat("GradId")));
+        document.getElementById(inputField.id.concat("GradId")).style.width = (inputField.value * 40).toString().concat("px");
+        graph.refreshPolygon();
+    })
+});
 
-function refreshAUX(){
-    var traits = ["lie","agro","extravert","spont","aggres","rigid","introvers","senzitiv","trevozhn","labil"];
-    for (var trait in traits) {
-        if (document.getElementById(traits[trait]).value > 9) {someData[traits[trait]] = 9; document.getElementById(traits[trait]).value = 9}
-        else if (document.getElementById(traits[trait]).value < 1) {someData[traits[trait]] = 1; document.getElementById(traits[trait]).value = 1}
-        else {someData[traits[trait]] = document.getElementById(traits[trait]).value;}
-    }
-    graph.refreshPolygon();
-}
-
-document.getElementById("btnHighlight").addEventListener("click", highlightAUX);
+/*document.getElementById("btnHighlight").addEventListener("click", highlightAUX);
 function highlightAUX() {
     graph.highlight(document.getElementById("highlight").value);
 }
@@ -387,3 +384,4 @@ document.getElementById("deBtnIssues").addEventListener("click", deIssuesAUX);
 function deIssuesAUX() {
     graph.dehighlightIssues();
 }
+*/
