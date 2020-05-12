@@ -36,7 +36,7 @@ class Graph {
                 for (const sector in sectors) {
                     if (sectors[sector] >= 1 && sectors[sector] <= 8) {
                         allSectors[sectors[sector]-1].style.fill = color;
-                        allSectors[sectors[sector]-1].setAttribute("fill-opacity", "0.3");
+                        allSectors[sectors[sector]-1].setAttribute("fill-opacity", "0.4");
                         
                         var firstPoint = this.pointLinesPoints[sectors[sector]-1];
                         
@@ -96,7 +96,7 @@ class Graph {
         var lie = this.target.getElementsByClassName("lie");
 
         if (this.graphData.agro > 0 && this.graphData.agro <= 9) {
-            var aggrLevel = (this.graphData.agro * 89.11).toString();
+            var aggrLevel = (this.graphData.agro * 94.33).toString();
             anime({
                 targets: '.agro',
                 r: aggrLevel,
@@ -105,9 +105,9 @@ class Graph {
                 loop: false
               });
 
-            aggr[0].setAttribute("stroke-width","6");
+            aggr[0].setAttribute("stroke-width","10");
 
-            var aggrDash = ((2 * Math.PI * aggrLevel)/60);
+            var aggrDash = ((2 * Math.PI * aggrLevel)/40);
             aggr[0].setAttribute("stroke-dasharray", aggrDash.toString());
 
             var aggrOffset = aggrDash / 2 
@@ -118,7 +118,7 @@ class Graph {
         }
 
         if (this.graphData.lie > 0 && this.graphData.lie <= 9) {
-            var lieLevel = (this.graphData.lie * 89.11).toString();
+            var lieLevel = (this.graphData.lie * 94.33).toString();
             anime({
                 targets: '.lie',
                 r: lieLevel,
@@ -127,9 +127,9 @@ class Graph {
                 loop: false
               });
 
-            lie[0].setAttribute("stroke-width","6");
+            lie[0].setAttribute("stroke-width","10");
 
-            var lieDash= ((2 * Math.PI * lieLevel)/60).toString();
+            var lieDash= ((2 * Math.PI * lieLevel)/40).toString();
             lie[0].setAttribute("stroke-dasharray", lieDash);
 
             var lieOffset = lieDash / 2 
@@ -150,12 +150,12 @@ class Graph {
                 this.highlightedTrait = trait;
                 switch (trait) {
                     case cases[0]:
-                        var lieLevel = (this.graphData.lie * 89.11).toString();
+                        var lieLevel = (this.graphData.lie * 94.33).toString();
                         this.target.getElementsByClassName(cases[0])[0].setAttribute("stroke-dasharray",(3 * Math.PI * lieLevel).toString());
                         this.target.getElementsByClassName(cases[0])[0].setAttribute("stroke-width","16");
                         break;
                     case cases[1]:
-                        var aggrLevel = (this.graphData.agro * 89.11 ).toString();
+                        var aggrLevel = (this.graphData.agro * 94.33 ).toString();
                         this.target.getElementsByClassName(cases[1])[0].setAttribute("stroke-dasharray",(3 * Math.PI * aggrLevel).toString());
                         this.target.getElementsByClassName(cases[1])[0].setAttribute("stroke-width","16");
                         break;
@@ -240,13 +240,13 @@ class Graph {
         var traitIndex = 1;
         this.pointLinesPoints = [];
         for (const trait in this.lineTraits) {
-            var side = this.graphData[this.lineTraits[trait]] * 89.11 * (Math.sqrt(2) / 2);
+            var side = this.graphData[this.lineTraits[trait]] * 94.33 * (Math.sqrt(2) / 2);
             var xpoint = 1000;
             var ypoint = 1000;
             switch(traitIndex) {
                 case 1:
                     traitIndex++;
-                    ypoint -= this.graphData[this.lineTraits[trait]] * 89.11;
+                    ypoint -= this.graphData[this.lineTraits[trait]] * 94.33;
                     this.points = this.points.concat(xpoint.toString(),", ",ypoint.toString()," ");
                     this.pointLinesPoints.push([xpoint.toString(),ypoint.toString()]);
                     break;
@@ -259,7 +259,7 @@ class Graph {
                     break;
                 case 3:
                     traitIndex++;
-                    xpoint += this.graphData[this.lineTraits[trait]] * 89.11;
+                    xpoint += this.graphData[this.lineTraits[trait]] * 94.33;
                     this.points = this.points.concat(xpoint.toString(),", ",ypoint.toString()," ");
                     this.pointLinesPoints.push([xpoint.toString(),ypoint.toString()]);
                     break;   
@@ -272,7 +272,7 @@ class Graph {
                     break;
                 case 5:
                     traitIndex++;
-                    ypoint += this.graphData[this.lineTraits[trait]] * 89.11;
+                    ypoint += this.graphData[this.lineTraits[trait]] * 94.33;
                     this.points = this.points.concat(xpoint.toString(),", ",ypoint.toString()," ");
                     this.pointLinesPoints.push([xpoint.toString(),ypoint.toString()]);
                     break;
@@ -285,7 +285,7 @@ class Graph {
                     break;
                 case 7:
                     traitIndex++;
-                    xpoint -= this.graphData[this.lineTraits[trait]] * 89.11;
+                    xpoint -= this.graphData[this.lineTraits[trait]] * 94.33;
                     this.points = this.points.concat(xpoint.toString(),", ",ypoint.toString()," ");
                     this.pointLinesPoints.push([xpoint.toString(),ypoint.toString()]);
                     break;
@@ -303,10 +303,10 @@ class Graph {
     }
     buildPolygon() {
         this.buildPoints();
-        this.poly.setAttribute("fill","#212121");
-        this.poly.setAttribute("fill-opacity","0.1")
-        this.poly.setAttribute("stroke", "#000");
-        this.poly.setAttribute("stroke-width", "15");
+        document.getElementById("polyStatsGrad").setAttribute("fill","url(#polyGrad)");
+        document.getElementById("polyStatsGrad").setAttribute("fill-opacity","0.8");
+        this.poly.setAttribute("stroke", "#576B88");
+        this.poly.setAttribute("stroke-width", "10");
         anime({
             targets: ".polyMorph",
             points: [
@@ -342,7 +342,7 @@ class Graph {
 }
 
 
-someData = {"lie":2,"agro":6,"extravert":2,"spont":6,"aggres":7,"rigid":6,"introvers":6,"senzitiv":5,"trevozhn":7,"labil":5};
+someData = {"lie":2,"agro":6,"extravert":2,"spont":6,"aggres":5,"rigid":6,"introvers":5,"senzitiv":4,"trevozhn":7,"labil":2};
 cacheData = JSON.stringify(someData);
 
 graph = new Graph("graph", someData);

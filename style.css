@@ -1,5 +1,6 @@
 body {
     display: flex;
+    background-color: #eeeeee;
 }
 .fields {
     width: 500px;
@@ -51,8 +52,12 @@ body {
 .agro{fill:none;stroke:#9B51E0;stroke-miterlimit:22.9256;}
 .lie{fill:none;stroke:#F7685B;stroke-miterlimit:22.9256;}
 .line{fill:none;stroke:#C9C9C9;stroke-width:9;stroke-miterlimit:22.9256;}
-.st4{fill:none;stroke:#2B2A29;stroke-width:9;stroke-miterlimit:22.9256;}
-.st5{fill:none;stroke:#C4C4C4;stroke-width:6;stroke-miterlimit:22.9256;}
+.outline{fill:none;stroke:#2B2A29;stroke-width:10;stroke-miterlimit:22.9256;}
+.st5{fill:none;stroke:#C4C4C4;stroke-width:3;stroke-miterlimit:22.9256;}
+
+.lines{display:inline;fill:none;stroke:#C9C9C9;stroke-width:10;stroke-miterlimit:22.9256;}
+.caps{fill:#C9C9C9;}
+
 .linesUnited{fill:url(#SVGID_1_);}
 .selLine{fill:none;stroke-linecap:round;/*stroke-miterlimit:22.9256;*/}
 .outerGrad{fill:url(#outerFillGrad);}
